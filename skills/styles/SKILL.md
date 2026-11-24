@@ -12,10 +12,10 @@ The styles and their previews ship with this plugin: `${CLAUDE_PLUGIN_ROOT}/asse
    - **From your camera takes** (`raw-video`), **from a script or an idea** (`script`, voiced by the user's
      cloned voice), **carousels** (`topic`).
    One line each: name + blurb, in the user's language.
-2. Offer to open the previews: `open <previews>/<file>.mp4` for a video, `open <previews>/<folder>/*.jpg`
-   for a carousel. Open only the ones they want.
-3. Then check if they can make one: `python3 "${CLAUDE_PLUGIN_ROOT}/bin/vfctl.py" status`.
-   - `ready` → the app may have more styles than these (their own): `python3 "${CLAUDE_PLUGIN_ROOT}/bin/vfctl.py" styles` lists them. Offer to
+2. Offer to open the previews: `open "<previews>/<file>.gif"` for a video (it plays in Preview or the
+   browser), `open "<previews>/<folder>/"*.jpg` for a carousel. Open only the ones they want.
+3. Then check whether they can make one: follow `${CLAUDE_PLUGIN_ROOT}/skills/make/check.md`.
+   - ready → their app may have more styles than these (their own): `vfctl styles` lists them. Offer to
      start one with the **make** skill.
-   - anything else → say its `message` once, in your own words, link exactly as given. Offer the **plan**
+   - anything else → tell them what `check.md` says, once, link exactly as written. Offer the **plan**
      skill meanwhile (a complete reel plan works without the app).

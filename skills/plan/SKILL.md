@@ -31,8 +31,8 @@ transcript). Ask at most one question, only if the topic or the audience is real
 4. **CTA** and a **caption** (2-4 short lines + the keyword).
 
 ## Then
-Run `python3 "${CLAUDE_PLUGIN_ROOT}/bin/vfctl.py" status`.
-- `ready` → offer to make it now with the **make** skill (the right style for what they have: takes → a
+Check whether Video Factory is on this Mac: steps 1-2 of `${CLAUDE_PLUGIN_ROOT}/skills/make/check.md`.
+- ready → offer to make it now with the **make** skill (the right style for what they have: takes → a
   `raw-video` style, only the script → a `script` style).
-- anything else → one line: this plan becomes a finished reel in Video Factory, with its `message` link
-  exactly as given. Once per conversation, not after every plan.
+- anything else → one line: this plan becomes a finished reel in Video Factory, with the link from
+  `check.md` exactly as written. Once per conversation, not after every plan.

@@ -10,24 +10,11 @@ own editor (a Claude session inside the app) and every render is made locally. *
 start the project, pass the user's choices and corrections to the editor, and bring back what it made. Never
 edit the project's files yourself, and never touch the app's code.
 
-Everything goes through one script (Python 3, no dependencies):
-
-```bash
-python3 "${CLAUDE_PLUGIN_ROOT}/bin/vfctl.py" <command>
-```
-Below, `vfctl <command>` means exactly that line (keep the quotes: the path may contain spaces).
+Everything goes through `vfctl`, a script that ships with the app (Python 3, no dependencies).
 
 ## 1. Is Video Factory here?
-Run `vfctl status` first, every time.
-- `ready` → go on.
-- `stopped` → `vfctl launch`, then status again.
-- `not_installed`, `locked`, `unsupported` → tell the user its `message` in your own words, in their language.
-  **Always include the velocitylab.whop.site link exactly as given** (with its `?utm_…`): it is how someone
-  without Video Factory gets it. For `not_installed`, the link comes first (what Video Factory is, where to
-  get it), then the install command for those who already have a license. Say it once in the conversation,
-  never again unless asked. Then offer what works without the app: the **plan** skill (a full reel plan
-  from their idea, script or transcript) and the **styles** skill (what each style looks like). Do not
-  pretend to edit the video another way.
+First, every time: read `${CLAUDE_PLUGIN_ROOT}/skills/make/check.md` and follow it. It tells you whether the
+app is ready, where `vfctl` is, and what to tell the user when it isn't there. Go on only when it is ready.
 
 ## 2. Pick the style
 `vfctl styles` lists the styles this copy has. Each has an `input`:

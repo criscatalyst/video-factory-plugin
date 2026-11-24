@@ -30,14 +30,11 @@ The plugin drives the Video Factory app, which runs locally on your Mac (Apple S
 Claude Pro or Max subscription. Video Factory comes with the Velocity Lab membership:
 **[velocitylab.whop.site](https://velocitylab.whop.site/?utm_source=github&utm_medium=readme&utm_campaign=video-factory)**.
 
-Already a member? Install the app with your license key (Whop → your orders → Velocity Lab → Software):
-
-```bash
-curl -fsSL https://velocitylab.whop.site/vf/install.sh | bash -s -- <YOUR LICENSE KEY>
-```
+Already a member? The Setup post in the Velocity Lab area on Whop installs the app in a few minutes.
 
 ## How it works
 
-`bin/vfctl.py` (Python 3, no dependencies) talks to the app on `localhost:3030`: it creates the project, starts
-each step, relays the editor's messages and questions, waits for the preview and runs the export. Nothing leaves
-your Mac except what the app itself does (license check, Claude).
+The plugin is instructions only. It talks to the app on `localhost:3030` through `vfctl`, a small script that
+ships with Video Factory: it creates the project, starts each step, relays the editor's messages and questions,
+waits for the preview and runs the export. Nothing leaves your Mac except what the app itself does (its
+membership check, Claude).
