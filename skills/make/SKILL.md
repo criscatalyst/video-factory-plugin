@@ -7,7 +7,7 @@ description: Make a short-form video (reel, TikTok, Short) or an Instagram carou
 
 Video Factory is an app on the user's Mac (http://localhost:3030). It does the editing: each project has its
 own editor (a Claude session inside the app) and every render is made locally. **You are the bridge**: you
-start the project, pass the user's choices and corrections to the editor, and bring back what it made. Never
+start the project, relay the user's choices and corrections to the editor, and bring back what it made. Never
 edit the project's files yourself, and never touch the app's code.
 
 Everything goes through `vfctl`, a script that ships with the app (Python 3, no dependencies).
@@ -46,7 +46,7 @@ After each `DONE`, look at `step`:
   When they approve → `vfctl run <id> continue`.
 - `roughcut` → summarise the storyboard (read `storyboard.json`: the beats, the hook) and point them to the
   rough cut (`roughcut` path, or the app). Changes → `say`. Approved → `vfctl run <id> apply`
-  (`--speed 1.1` by default in the app; pass another only if the user asks).
+  (`--speed 1.1` by default in the app; use another only if the user asks).
 - `preview` → the styled video is at `preview`. Offer to open it (`open <path>`). Every correction
   ("bigger captions", "cut the second hook", "music lower") → `vfctl say <id> "…"` with the user's words;
   the preview renders again by itself.
@@ -57,7 +57,7 @@ has no archive folder set, a Finder window asks where to save: tell the user bef
 the file (`out`) and raea's export check (`issues`): report the P0/P1 issues if any.
 
 ## Rules
-- Relay, don't rewrite: pass the user's corrections to the editor with their meaning intact, add the
+- Relay, don't rewrite: send the user's corrections to the editor with their meaning intact, add the
   timestamp or element when you know it.
 - Short updates to the user in their language, one line per step. No logs.
 - One project per video. `vfctl list` shows the existing ones if the user wants to go back to one.
