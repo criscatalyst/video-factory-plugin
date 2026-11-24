@@ -1,6 +1,6 @@
 ---
 name: make
-description: Make a short-form video (reel, TikTok, Short) or an Instagram carousel with Video Factory, from raw takes, a script or an idea, end to end - rough cut, captions, b-roll, music, export. Use when the user wants to edit or make a video or carousel, says "make a reel", "edit this video", "turn this take into a reel", "video factory", or hands over a video file to edit.
+description: Make a short-form video (reel, TikTok, Short) or an Instagram carousel with Video Factory, from the user's own camera takes (reels) or an idea (carousels), end to end - rough cut, captions, b-roll, music, export. Use when the user wants to edit or make a video or carousel, says "make a reel", "edit this video", "turn this take into a reel", "video factory", or hands over a video file to edit.
 ---
 
 # Make a video with Video Factory
@@ -17,17 +17,18 @@ First, every time: read `${CLAUDE_PLUGIN_ROOT}/skills/make/check.md` and follow 
 app is ready, where `vfctl` is, and what to tell the user when it isn't there. Go on only when it is ready.
 
 ## 2. Pick the style
-`vfctl styles` lists the styles this copy has. Each has an `input`:
-- `raw-video` → the user's own camera takes (`talking-head`, `split-screen`…): needs video files.
-- `script` → a script or an idea, voiced by their cloned voice (`paper-animation`, `explainer-3d`).
+`vfctl styles` lists the styles this copy has. Each has an `input`; this plugin uses only two kinds:
+- `raw-video` → reels from the user's own camera takes (`talking-head`, `split-screen`…): needs video files.
 - `topic` → carousels: an idea or a text.
+Leave out every other style (`input` `script`): those are made in the Video Factory app itself, not
+through this plugin. If the user asks for one, say so and offer a `raw-video` style or a carousel.
 If the user did not say, propose the one or two that fit what they have (one line each from `blurb`) and let
 them choose. Absolute paths for the media.
 
 ## 3. Create and start
 ```bash
 vfctl new <style> --media /abs/take1.mov /abs/take2.mov     # raw-video
-vfctl new <style> --script "the idea or the script"           # script / topic (or --script @file.txt)
+vfctl new <style> --script "the idea or the text"             # topic (or --script @file.txt)
 vfctl run <id> start
 ```
 Tell the user they can watch it live: `vfctl open <id>` opens the project in the app.
@@ -42,8 +43,8 @@ Tell the user they can watch it live: `vfctl open <id>` opens the project in the
 
 ## 4. Follow the steps
 After each `DONE`, look at `step`:
-- `script` → show the user the script (read the `script` file). Their changes → `vfctl say <id> "…"`.
-  When they approve → `vfctl run <id> continue`.
+- `script` → (carousels) show the user the text of the slides (read the `script` file). Their changes →
+  `vfctl say <id> "…"`. When they approve → `vfctl run <id> continue`.
 - `roughcut` → summarise the storyboard (read `storyboard.json`: the beats, the hook) and point them to the
   rough cut (`roughcut` path, or the app). Changes → `say`. Approved → `vfctl run <id> apply`
   (`--speed 1.1` by default in the app; use another only if the user asks).

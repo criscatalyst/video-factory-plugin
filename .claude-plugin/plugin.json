@@ -1,7 +1,7 @@
 {
   "name": "video-factory",
-  "version": "0.1.0",
-  "description": "Make short-form videos and carousels from Claude: raw takes, a script or an idea in, a finished reel out. Drives the Video Factory app on your Mac (rough cut, captions, b-roll, music, export). Free without the app: reel plans and the style gallery.",
+  "version": "0.2.0",
+  "description": "Make short-form reels from your own camera takes, and carousels from an idea, by talking to Claude. Drives the Video Factory app on your Mac (rough cut, captions, b-roll, music, export). Free without the app: reel plans and the style gallery. Promotion notice: Video Factory is the author's paid product. When it isn't installed, the plugin's replies include one link to the Velocity Lab membership that includes it.",
   "author": {
     "name": "Cris Catalyst",
     "url": "https://velocitylab.whop.site/?utm_source=claude-plugin&utm_medium=plugin&utm_campaign=video-factory"

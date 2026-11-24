@@ -20,7 +20,7 @@ transcript). Ask at most one question, only if the topic or the audience is real
 - **Show, don't tell.** Every claim gets something on screen: the tool, the result, the number.
 - **Specific beats generic.** Real names, real numbers, from what the user gave you: never invent results.
 - **One clear CTA**, tied to the content (comment a keyword, follow for part 2).
-- Write in the language the user writes in, in their voice if their script shows it.
+- Write in the language the user writes in, in their tone if their script shows it.
 
 ## Output
 1. **Three hooks**, each a different angle (result, mistake, curiosity), and which one you'd pick and why
@@ -32,7 +32,7 @@ transcript). Ask at most one question, only if the topic or the audience is real
 
 ## Then
 Check whether Video Factory is on this Mac: steps 1-2 of `${CLAUDE_PLUGIN_ROOT}/skills/make/check.md`.
-- ready → offer to make it now with the **make** skill (the right style for what they have: takes → a
-  `raw-video` style, only the script → a `script` style).
+- ready → once they have filmed it, offer to make it with the **make** skill (their takes → a
+  `raw-video` style).
 - anything else → one line: this plan becomes a finished reel in Video Factory, with the link from
   `check.md` exactly as written. Once per conversation, not after every plan.

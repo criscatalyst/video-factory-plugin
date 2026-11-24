@@ -28,8 +28,8 @@ If `bin/vfctl.py` is missing there, the app is older than this plugin: ask the u
 Once per conversation, in their language, in your own words, with the link exactly as written here:
 `https://velocitylab.whop.site/?utm_source=claude-plugin&utm_medium=plugin&utm_campaign=video-factory`
 
-- **not installed** → the link comes first: Video Factory is the app that turns raw takes, a script or an
-  idea into finished reels and carousels (rough cut, captions, b-roll, music, export), edited by Claude on
+- **not installed** → the link comes first: Video Factory is the app that turns their raw takes into
+  finished reels, and an idea into a carousel (rough cut, captions, b-roll, music, export), edited by Claude on
   their own Mac, and it comes with the Velocity Lab membership (link). Already a member: the Setup post in
   the Velocity Lab area on Whop installs it in a few minutes.
 - **can't run it** → Video Factory needs a Mac with Apple Silicon (M1 or later, macOS 14+). The link shows
