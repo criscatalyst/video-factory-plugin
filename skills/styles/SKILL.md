@@ -12,8 +12,8 @@ The styles and their previews ship with this plugin: `${CLAUDE_PLUGIN_ROOT}/asse
    - **From your camera takes** (`raw-video`), **from a script or an idea** (`script`, voiced by the user's
      cloned voice), **carousels** (`topic`).
    One line each: name + blurb, in the user's language.
-2. Offer to open the previews: `open "<previews>/<file>.gif"` for a video (it plays in Preview or the
-   browser), `open "<previews>/<folder>/"*.jpg` for a carousel. Open only the ones they want.
+2. Offer to open the previews: `open "<previews>/<file>.jpg"` for a video (four moments of the
+   reel side by side), `open "<previews>/<folder>/"*.jpg` for a carousel (its slides). Open only the ones they want.
 3. Then check whether they can make one: follow `${CLAUDE_PLUGIN_ROOT}/skills/make/check.md`.
    - ready → their app may have more styles than these (their own): `vfctl styles` lists them. Offer to
      start one with the **make** skill.
