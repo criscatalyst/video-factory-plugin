@@ -1,6 +1,11 @@
 # Is Video Factory on this Mac?
 
-Run these in order and stop at the first answer.
+Video Factory runs on the user's own Mac. If you are not running on their Mac (no shell, or a cloud
+sandbox, as in the Claude web or mobile apps), don't run the checks: say that making the video needs Claude
+Code (or the Claude desktop app's Code tab) on their Mac with Video Factory installed, give the link below,
+and offer the **plan** skill, which works anywhere.
+
+Otherwise run these in order and stop at the first answer.
 
 1. Ask the app itself: a GET to http://localhost:3030/api/license, with a 3-second timeout. It answers JSON.
    - `"ok": true` → **ready**.

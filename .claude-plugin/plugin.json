@@ -16,5 +16,8 @@
     "carousel",
     "content"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/criscatalyst/video-factory-plugin",
+  "documentationUrl": "https://github.com/criscatalyst/video-factory-plugin#readme",
+  "supportUrl": "https://github.com/criscatalyst/video-factory-plugin/issues"
 }
