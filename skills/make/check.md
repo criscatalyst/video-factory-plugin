@@ -2,20 +2,21 @@
 
 Run these in order and stop at the first answer.
 
-1. `curl -s -m 3 http://localhost:3030/api/license`
+1. Ask the app itself: a GET to http://localhost:3030/api/license, with a 3-second timeout. It answers JSON.
    - `"ok": true` → **ready**.
    - `"ok": false` → **locked**: its `reason` picks the message below.
    - no answer → step 2.
-2. `ls "${VF_HOME:-$HOME/VideoFactory}/app-raea/server.py"`
-   - it exists → **stopped**: start it with `launchctl kickstart -k gui/$(id -u)/com.videofactory.app`
-     (if that fails: `open "$HOME/Applications/Video Factory.app"`), wait ~5 s, then step 1 again.
-   - it does not → **not installed**. If `uname -m` is not `arm64`, this Mac **can't run it**.
+2. Look for the app's folder: `app-raea/server.py` inside `$VF_HOME`, or inside `~/VideoFactory` when
+   `VF_HOME` is not set.
+   - it exists → **stopped**: restart its LaunchAgent (label `com.videofactory.app`, in the user's GUI
+     domain), or open `~/Applications/Video Factory.app` if that fails. Wait ~5 s, then step 1 again.
+   - it does not → **not installed**. If the Mac's architecture is not arm64, this Mac **can't run it**.
 
 ## The script (only when ready)
-`vfctl` = `python3 "<app>/bin/vfctl.py"`, quoted (the path may contain spaces), where `<app>` is
-`${VF_HOME:-$HOME/VideoFactory}/app-raea`. If that folder doesn't exist, use the folder of the running app:
-`ps -o command= -p $(lsof -nP -iTCP:3030 -sTCP:LISTEN -t | head -1)` ends with `<app>/server.py`.
-If `<app>/bin/vfctl.py` is missing, the app is older than this plugin: ask the user to update Video Factory
+`vfctl` is `bin/vfctl.py` inside the app's `app-raea` folder, run with python3 and its path quoted (it may
+contain spaces). That folder is the one from step 2; if it doesn't exist, it is the folder of the process
+listening on port 3030, whose command line ends with `app-raea/server.py`.
+If `bin/vfctl.py` is missing there, the app is older than this plugin: ask the user to update Video Factory
 (the update prompt in the Setup post of the Velocity Lab area on Whop), and stop there.
 
 ## What to tell the user
