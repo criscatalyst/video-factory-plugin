@@ -1,0 +1,16 @@
+[
+ {"id": "talking-head", "name": "Talking head", "kind": "video", "input": "raw-video",
+  "blurb": "Full frame, proof behind your head.", "preview": "previews/talking-head.mp4"},
+ {"id": "split-screen", "name": "Split screen", "kind": "video", "input": "raw-video",
+  "blurb": "You in a card, real footage and graphics above.", "preview": "previews/split-screen.mp4"},
+ {"id": "paper-animation", "name": "Paper animation", "kind": "video", "input": "script",
+  "blurb": "Your clips, then animation on paper. Cloned voice.", "preview": "previews/paper-animation.mp4"},
+ {"id": "explainer-3d", "name": "Explainer", "kind": "3d", "input": "script",
+  "blurb": "A 3D world built in code, your cloned voice.", "preview": "previews/explainer-3d.mp4"},
+ {"id": "carousel-clean", "name": "Clean", "kind": "carousel", "input": "topic",
+  "blurb": "Big headlines on paper, numbered points, a quote and your keyword. No photos needed.", "preview": "previews/carousel-clean/"},
+ {"id": "carousel-personal", "name": "Personal", "kind": "carousel", "input": "topic",
+  "blurb": "Your photos, split view, numbered points.", "preview": "previews/carousel-personal/"},
+ {"id": "carousel-card", "name": "Card", "kind": "carousel", "input": "topic",
+  "blurb": "Tweet cards between two photo slides.", "preview": "previews/carousel-card/"}
+]

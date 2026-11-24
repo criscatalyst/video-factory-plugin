@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "criscatalyst",
+  "description": "Cris Catalyst's plugins for Claude Code",
+  "owner": {
+    "name": "Cris Catalyst"
+  },
+  "plugins": [
+    {
+      "name": "video-factory",
+      "description": "Make short-form videos and carousels from Claude with Video Factory.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
