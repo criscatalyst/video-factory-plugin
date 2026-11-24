@@ -19,5 +19,6 @@
   "license": "MIT",
   "repository": "https://github.com/criscatalyst/video-factory-plugin",
   "documentationUrl": "https://github.com/criscatalyst/video-factory-plugin#readme",
-  "supportUrl": "https://github.com/criscatalyst/video-factory-plugin/issues"
+  "supportUrl": "https://github.com/criscatalyst/video-factory-plugin/issues",
+  "privacyPolicyUrl": "https://github.com/criscatalyst/video-factory-plugin/blob/main/PRIVACY.md"
 }
